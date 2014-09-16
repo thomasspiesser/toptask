@@ -4,7 +4,9 @@
 
 <body>
   {{> header }}
+  {{#if currentUser}}
   {{> main }}
+  {{/if}}
 </body>
 
 <template name="header">
