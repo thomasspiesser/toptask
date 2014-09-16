@@ -5,3 +5,7 @@
 
 meteor-platform
 insecure
+accounts-ui
+bootstrap
+accounts-password
+
