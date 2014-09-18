@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="toptaskClient" customModuleProvider="target">
+            <connections>
+                <outlet property="connectionStatusLight" destination="41h-LY-MyZ" id="Mb9-gt-2oK"/>
+                <outlet property="connectionStatusText" destination="qFQ-e1-ys4" id="KFl-al-ac3"/>
+                <outlet property="loginButton" destination="Jhv-36-RbI" id="EGB-tJ-1zL"/>
+                <outlet property="password" destination="1Cd-OW-g2R" id="zZH-Vw-cSb"/>
+                <outlet property="username" destination="o0N-oG-Vc5" id="VCJ-jJ-pXP"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="TopTask" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5A6-B4-xwA">
+                    <rect key="frame" x="15" y="39" width="569" height="85"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="tintColor" red="0.1718562824" green="0.23276361279999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="red_light.png" translatesAutoresizingMaskIntoConstraints="NO" id="41h-LY-MyZ">
+                    <rect key="frame" x="564" y="563" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="odB-nz-2H2"/>
+                        <constraint firstAttribute="width" constant="20" id="upd-sX-3O3"/>
+                    </constraints>
+                </imageView>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o0N-oG-Vc5">
+                    <rect key="frame" x="102" y="177" width="482" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Cd-OW-g2R">
+                    <rect key="frame" x="102" y="222" width="482" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ewb-8Z-u5T">
+                    <rect key="frame" x="15" y="181" width="79" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Password" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fuy-Y7-aru">
+                    <rect key="frame" x="15" y="225" width="76" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not connected to the server" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qFQ-e1-ys4">
+                    <rect key="frame" x="334" y="562" width="214.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jhv-36-RbI">
+                    <rect key="frame" x="85" y="301" width="430" height="56"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
+                    <state key="normal" title="Login">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="1Cd-OW-g2R" firstAttribute="leading" secondItem="Fuy-Y7-aru" secondAttribute="trailing" constant="11" id="00i-v4-wdr"/>
+                <constraint firstItem="Ewb-8Z-u5T" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="0pw-e7-zVI"/>
+                <constraint firstItem="o0N-oG-Vc5" firstAttribute="leading" secondItem="Ewb-8Z-u5T" secondAttribute="trailing" constant="8" id="2vz-uj-7eZ"/>
+                <constraint firstItem="5A6-B4-xwA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="7dF-vO-i3I"/>
+                <constraint firstItem="Fuy-Y7-aru" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="7g7-jY-NC4"/>
+                <constraint firstItem="41h-LY-MyZ" firstAttribute="leading" secondItem="qFQ-e1-ys4" secondAttribute="trailing" constant="15" id="8aX-2H-lyX"/>
+                <constraint firstAttribute="bottom" secondItem="qFQ-e1-ys4" secondAttribute="bottom" constant="17" id="L9h-CJ-5hQ"/>
+                <constraint firstAttribute="trailing" secondItem="o0N-oG-Vc5" secondAttribute="trailing" constant="16" id="RJw-qq-ica"/>
+                <constraint firstAttribute="trailing" secondItem="41h-LY-MyZ" secondAttribute="trailing" constant="16" id="XcM-W4-O1t"/>
+                <constraint firstAttribute="bottom" secondItem="41h-LY-MyZ" secondAttribute="bottom" constant="17" id="bxm-Oo-MOB"/>
+                <constraint firstAttribute="trailing" secondItem="Jhv-36-RbI" secondAttribute="trailing" constant="85" id="c7x-Ub-fNP"/>
+                <constraint firstAttribute="trailing" secondItem="1Cd-OW-g2R" secondAttribute="trailing" constant="16" id="fYW-PV-SAF"/>
+                <constraint firstItem="Jhv-36-RbI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="85" id="hL2-sB-XY7"/>
+                <constraint firstAttribute="trailing" secondItem="5A6-B4-xwA" secondAttribute="trailing" constant="16" id="nZ4-ME-eJx"/>
+            </constraints>
+        </view>
+    </objects>
+    <resources>
+        <image name="red_light.png" width="50" height="50"/>
+    </resources>
+</document>

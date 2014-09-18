@@ -12,30 +12,37 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
+    var navController: UINavigationController!
     
     //var meteorClient = initialiseMeteor("pre2", "wss://ddptester.meteor.com/websocket");
     var meteorClient = initialiseMeteor("pre2", "http://localhost:3000/websocket");
 
-
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
-        // Override point for customization after application launch.
-        meteorClient.logonWithEmail("m@g.com", password: "111111", responseCallback: {(response, error) -> Void in if((error) != nil) {
-                println(error)
-                self.handleFailedAuth(error)
-                return
-            }
-            self.handleSuccessfulAuth()
-        })
-
+        
+        //meteorClient.addSubscription("things")
+        //meteorClient.addSubscription("lists")
+        
+        var loginController:LoginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
+        loginController.meteor = self.meteorClient
+        
+        self.navController = UINavigationController(rootViewController:loginController)
+        self.navController.navigationBarHidden = true
+        
+        self.window?.rootViewController = self.navController
+        self.window?.makeKeyAndVisible()
+        
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reportConnection", name: MeteorClientDidConnectNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reportDisconnection", name: MeteorClientDidDisconnectNotification, object: nil)
         return true
     }
-
-    func handleSuccessfulAuth() {
-        println("success")
+    
+    func reportConnection() {
+        println("================> connected to server!")
     }
     
-    func handleFailedAuth(error: NSError) {
-        UIAlertView(title: "Meteor Todos", message:error.localizedDescription, delegate: nil, cancelButtonTitle: "Try Again").show()
+    func reportDisconnection() {
+        println("================> disconnected from server!")
     }
     
     func applicationWillResignActive(application: UIApplication!) {
