@@ -28,8 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.navController = UINavigationController(rootViewController:loginController)
         self.navController.navigationBarHidden = true
         
-        self.window?.rootViewController = self.navController
-        self.window?.makeKeyAndVisible()
+        self.window!.rootViewController = self.navController
+        self.window!.makeKeyAndVisible()
         
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reportConnection", name: MeteorClientDidConnectNotification, object: nil)

@@ -10,8 +10,9 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var username: UITextField!
     @IBOutlet weak var password: UITextField!
+    
+    @IBOutlet weak var username: UITextField!
     
     @IBOutlet weak var loginButton: UIButton!
     
@@ -34,12 +35,15 @@ class LoginViewController: UIViewController {
         }
     }
     
-    @IBAction func didTapLoginButton(sender: AnyObject) {
+    @IBAction func tappedLoginButton(sender: AnyObject) {
         if (!meteor.websocketReady) {
-            let notConnectedAlert = UIAlertView(title: "Connection Error", message: "Can't find the Todo server, try again", delegate: nil, cancelButtonTitle: "OK")
+            let notConnectedAlert = UIAlertView(title: "Connection Error", message: "Can't find the TopTask server, try again", delegate: nil, cancelButtonTitle: "OK")
             notConnectedAlert.show()
             return
         }
+        println("tapped button")
+        println(self.username.text)
+        
         
         meteor.logonWithEmail(self.username.text, password: self.password.text, responseCallback: {(response, error) -> Void in
             
@@ -61,7 +65,7 @@ class LoginViewController: UIViewController {
     
     func handleFailedAuth(error: NSError) {
         println("failed")
-        UIAlertView(title: "Meteor Todos", message:error.localizedDescription, delegate: nil, cancelButtonTitle: "Try Again").show()
+        UIAlertView(title: "TopTask", message:error.localizedDescription, delegate: nil, cancelButtonTitle: "Try Again").show()
     }
     
     override func viewDidLoad() {
