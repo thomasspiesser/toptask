@@ -9,7 +9,6 @@
             <connections>
                 <outlet property="connectionStatusLight" destination="41h-LY-MyZ" id="Mb9-gt-2oK"/>
                 <outlet property="connectionStatusText" destination="qFQ-e1-ys4" id="KFl-al-ac3"/>
-                <outlet property="loginButton" destination="Jhv-36-RbI" id="EGB-tJ-1zL"/>
                 <outlet property="password" destination="1Cd-OW-g2R" id="zZH-Vw-cSb"/>
                 <outlet property="username" destination="o0N-oG-Vc5" id="QFe-Pu-fyx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

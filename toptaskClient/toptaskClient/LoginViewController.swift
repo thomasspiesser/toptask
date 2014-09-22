@@ -11,10 +11,7 @@ import UIKit
 class LoginViewController: UIViewController {
 
     @IBOutlet weak var password: UITextField!
-    
     @IBOutlet weak var username: UITextField!
-    
-    @IBOutlet weak var loginButton: UIButton!
     
     @IBOutlet weak var connectionStatusText: UILabel!
     @IBOutlet weak var connectionStatusLight: UIImageView!
@@ -57,10 +54,15 @@ class LoginViewController: UIViewController {
     
     func handleSuccessfulAuth() {
         println("success")
-        //var listViewController = ListViewController(nibName: "ListViewController", bundle: nil, meteor: self.meteor)
         
-        //listViewController.userId = self.meteor.userId
-        //self.navigationController.pushViewController(listViewController, animated: true)
+        println(self.meteor.userId)
+        
+        //var listViewController = ListViewController(nibName: "ListViewController", bundle: nil, meteor: self.meteor)
+        var favsViewController = FavouritesViewController(nibName: "FavouritesViewController", bundle: nil, meteor: self.meteor)
+        
+        
+        favsViewController.userId = self.meteor.userId
+        self.navigationController.pushViewController(favsViewController, animated: true)
     }
     
     func handleFailedAuth(error: NSError) {

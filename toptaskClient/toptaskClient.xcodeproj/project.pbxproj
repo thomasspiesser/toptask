@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		63676927623F4AF7B526B1DB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF2FA9271CB4D0CA1160A65 /* libPods.a */; };
 		E902254C19C87D1F00E91130 /* bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E902254B19C87D1F00E91130 /* bridge.m */; };
+		E944DFC119CC3F7F007F8B91 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E944DFBF19CC3F7F007F8B91 /* FavouritesViewController.swift */; };
+		E944DFC219CC3F7F007F8B91 /* FavouritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E944DFC019CC3F7F007F8B91 /* FavouritesViewController.xib */; };
 		E95D949519CB2299001D888F /* red_light.png in Resources */ = {isa = PBXBuildFile; fileRef = E95D949419CB2299001D888F /* red_light.png */; };
 		E95D949719CB22A2001D888F /* green_light.png in Resources */ = {isa = PBXBuildFile; fileRef = E95D949619CB22A2001D888F /* green_light.png */; };
 		E95D94A119CB25F3001D888F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D949F19CB25F3001D888F /* LoginViewController.swift */; };
@@ -33,6 +35,8 @@
 		DBF2FA9271CB4D0CA1160A65 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E902254A19C87D1E00E91130 /* toptaskClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "toptaskClient-Bridging-Header.h"; sourceTree = "<group>"; };
 		E902254B19C87D1F00E91130 /* bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bridge.m; sourceTree = "<group>"; };
+		E944DFBF19CC3F7F007F8B91 /* FavouritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		E944DFC019CC3F7F007F8B91 /* FavouritesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FavouritesViewController.xib; sourceTree = "<group>"; };
 		E95D949419CB2299001D888F /* red_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_light.png; sourceTree = "<group>"; };
 		E95D949619CB22A2001D888F /* green_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_light.png; sourceTree = "<group>"; };
 		E95D949F19CB25F3001D888F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -101,6 +105,8 @@
 				E9C6A86C19C87A2600129844 /* AppDelegate.swift */,
 				E95D949F19CB25F3001D888F /* LoginViewController.swift */,
 				E95D94A019CB25F3001D888F /* LoginViewController.xib */,
+				E944DFBF19CC3F7F007F8B91 /* FavouritesViewController.swift */,
+				E944DFC019CC3F7F007F8B91 /* FavouritesViewController.xib */,
 				E9C6A87319C87A2600129844 /* Images.xcassets */,
 				E9C6A86A19C87A2600129844 /* Supporting Files */,
 			);
@@ -217,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E95D94A219CB25F3001D888F /* LoginViewController.xib in Resources */,
+				E944DFC219CC3F7F007F8B91 /* FavouritesViewController.xib in Resources */,
 				E95D949519CB2299001D888F /* red_light.png in Resources */,
 				E95D949719CB22A2001D888F /* green_light.png in Resources */,
 				E9C6A87419C87A2600129844 /* Images.xcassets in Resources */,
@@ -270,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E944DFC119CC3F7F007F8B91 /* FavouritesViewController.swift in Sources */,
 				E95D94A119CB25F3001D888F /* LoginViewController.swift in Sources */,
 				E902254C19C87D1F00E91130 /* bridge.m in Sources */,
 				E9C6A86D19C87A2600129844 /* AppDelegate.swift in Sources */,
