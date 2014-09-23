@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var connectionStatusText: UILabel!
     @IBOutlet weak var connectionStatusLight: UIImageView!
     
-    var meteor:MeteorClient!
+    var meteor = initialiseMeteor("pre2", "http://localhost:3000/websocket");
     
     override func viewWillAppear(animated: Bool) {
         var observingOption = NSKeyValueObservingOptions.New
@@ -38,41 +38,18 @@ class LoginViewController: UIViewController {
             notConnectedAlert.show()
             return
         }
-        println("tapped button")
-        println(self.username.text)
-        
-        
+
         meteor.logonWithEmail(self.username.text, password: self.password.text, responseCallback: {(response, error) -> Void in
-            
             if((error) != nil) {
-                self.handleFailedAuth(error)
+                UIAlertView(title: "TopTask", message:error.localizedDescription, delegate: nil, cancelButtonTitle: "Try Again").show()
                 return
             }
-            self.handleSuccessfulAuth()
+            self.performSegueWithIdentifier("segueLogin", sender: self)
         })
-    }
-    
-    func handleSuccessfulAuth() {
-        println("success")
-        
-        println(self.meteor.userId)
-        
-        //var listViewController = ListViewController(nibName: "ListViewController", bundle: nil, meteor: self.meteor)
-        var favsViewController = FavouritesViewController(nibName: "FavouritesViewController", bundle: nil, meteor: self.meteor)
-        
-        
-        favsViewController.userId = self.meteor.userId
-        self.navigationController.pushViewController(favsViewController, animated: true)
-    }
-    
-    func handleFailedAuth(error: NSError) {
-        println("failed")
-        UIAlertView(title: "TopTask", message:error.localizedDescription, delegate: nil, cancelButtonTitle: "Try Again").show()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 
@@ -81,7 +58,14 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        if (segue.identifier == "segueLogin") {
+            var fvc = segue!.destinationViewController as FavouritesViewController;
+            fvc.meteor = self.meteor
+            fvc.userId = self.meteor.userId
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -16,24 +16,23 @@ class FavouritesViewController: UIViewController {
     @IBOutlet weak var Task4: UIButton!
     
     var meteor:MeteorClient!
-    var userId:NSString?
+    var userId:NSString!
     //var lists:NSMutableArray!
     
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!, meteor: MeteorClient!) {
-        
-        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.meteor = meteor
-        //self.lists = self.meteor.collections["lists"] as NSMutableArray
-
-    }
+//    required init(coder aDecoder: NSCoder) {
+//        fatalError("init(coder:) has not been implemented")
+//    }
+//    
+//    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!, meteor: MeteorClient!) {
+//        
+//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+//        self.meteor = meteor
+//        //self.lists = self.meteor.collections["lists"] as NSMutableArray
+//
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
 

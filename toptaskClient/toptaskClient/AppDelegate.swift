@@ -12,37 +12,16 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
                             
     var window: UIWindow?
-    var navController: UINavigationController!
     
     //var meteorClient = initialiseMeteor("pre2", "wss://ddptester.meteor.com/websocket");
-    var meteorClient = initialiseMeteor("pre2", "http://localhost:3000/websocket");
+    //var meteorClient = initialiseMeteor("pre2", "http://localhost:3000/websocket");
 
     func application(application: UIApplication!, didFinishLaunchingWithOptions launchOptions: NSDictionary!) -> Bool {
         
         //meteorClient.addSubscription("things")
         //meteorClient.addSubscription("lists")
         
-        var loginController:LoginViewController = LoginViewController(nibName: "LoginViewController", bundle: nil)
-        loginController.meteor = self.meteorClient
-        
-        self.navController = UINavigationController(rootViewController:loginController)
-        self.navController.navigationBarHidden = true
-        
-        self.window!.rootViewController = self.navController
-        self.window!.makeKeyAndVisible()
-        
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reportConnection", name: MeteorClientDidConnectNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "reportDisconnection", name: MeteorClientDidDisconnectNotification, object: nil)
         return true
-    }
-    
-    func reportConnection() {
-        println("================> connected to server!")
-    }
-    
-    func reportDisconnection() {
-        println("================> disconnected from server!")
     }
     
     func applicationWillResignActive(application: UIApplication!) {
