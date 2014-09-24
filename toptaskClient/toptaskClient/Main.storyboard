@@ -43,7 +43,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0O2-IL-xTv">
                                 <rect key="frame" x="103" y="174" width="185" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cM8-nJ-lkv">
                                 <rect key="frame" x="103" y="219" width="196" height="30"/>
@@ -106,7 +106,6 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rD-C9-cTU">
                                 <rect key="frame" x="85" y="296" width="189" height="56"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="U8t-pt-4yE"/>
                                     <constraint firstAttribute="width" constant="200" id="n8j-lZ-wwq"/>
@@ -121,8 +120,7 @@
                                         <exclude reference="n8j-lZ-wwq"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="100" y="389" width="200" height="60"/>
+                                <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <exclude reference="U8t-pt-4yE"/>
                                         <exclude reference="n8j-lZ-wwq"/>
@@ -224,12 +222,12 @@
                         <outlet property="connectionStatusText" destination="2uz-iT-Qo7" id="Pma-u9-lvF"/>
                         <outlet property="password" destination="cM8-nJ-lkv" id="wz6-b9-cIj"/>
                         <outlet property="username" destination="0O2-IL-xTv" id="RWb-uK-ktv"/>
-                        <segue destination="3cJ-Vi-sbf" kind="show" identifier="segueLogin" id="oWY-1Z-Pyk"/>
+                        <segue destination="oQ5-PR-dUA" kind="show" identifier="segueLogin" id="oWY-1Z-Pyk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nrr-Az-2Fl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="583.5" y="550.5"/>
+            <point key="canvasLocation" x="517.5" y="550.5"/>
         </scene>
         <!--Favourites View Controller-->
         <scene sceneID="77V-hL-VDD">
@@ -372,7 +370,17 @@
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="tLP-Nb-7vz">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="jxK-ed-6U9">
+                            <connections>
+                                <action selector="didTapLogoutButton:" destination="3cJ-Vi-sbf" id="8R9-lH-YfS"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="LogoutButton" destination="jxK-ed-6U9" id="qip-xb-aGh"/>
                         <outlet property="Task1" destination="xoj-LS-MPB" id="UG9-Bh-uTj"/>
                         <outlet property="Task2" destination="b72-0p-I64" id="3oB-T4-RIL"/>
                         <outlet property="Task3" destination="Me6-8u-yT9" id="lVm-M1-ydk"/>
@@ -380,6 +388,24 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYq-LM-xbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2265" y="550.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ohv-R0-OjW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oQ5-PR-dUA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rf5-WR-CZU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="3cJ-Vi-sbf" kind="relationship" relationship="rootViewController" id="7Nq-Bo-7rj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HHA-zY-zD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1374" y="550.5"/>
         </scene>

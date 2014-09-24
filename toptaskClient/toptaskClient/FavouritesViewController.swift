@@ -15,6 +15,8 @@ class FavouritesViewController: UIViewController {
     @IBOutlet weak var Task3: UIButton!
     @IBOutlet weak var Task4: UIButton!
     
+    @IBOutlet weak var LogoutButton: UIBarButtonItem!
+    
     var meteor:MeteorClient!
     var userId:NSString!
     //var lists:NSMutableArray!
@@ -41,6 +43,10 @@ class FavouritesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func didTapLogoutButton(sender: AnyObject) {
+        meteor.logout()
+        
+    }
 
     /*
     // MARK: - Navigation

@@ -60,7 +60,9 @@ class LoginViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         if (segue.identifier == "segueLogin") {
-            var fvc = segue!.destinationViewController as FavouritesViewController;
+            let navigationController = segue!.destinationViewController as UINavigationController
+            
+            let fvc = navigationController.viewControllers[0] as FavouritesViewController;
             fvc.meteor = self.meteor
             fvc.userId = self.meteor.userId
         }
