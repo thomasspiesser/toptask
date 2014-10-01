@@ -101,6 +101,11 @@ if (Meteor.isServer) {
                                {"owner": this.userId}]});
     });
 
+    Meteor.publish("userData", function () {
+      return Meteor.users.find({_id: this.userId}, 
+                                 {fields: {'services': 1}});
+    });
+
     Things.allow({
       insert: function(userId, doc) {
         return (userId && doc.owner === userId);
@@ -132,7 +137,6 @@ if (Meteor.isServer) {
     updateRelatedThings: function(listName, shareWith) {
       Things.update({listName: listName}, {$set: {share_with: shareWith}}, {multi: true});
     },
-
     sayHelloTo: function(name) {
       return "hello " + name;
     }
