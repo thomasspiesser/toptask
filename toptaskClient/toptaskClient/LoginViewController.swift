@@ -54,15 +54,15 @@ class LoginViewController: UIViewController {
             
             self.logStatus.text = "\(self.meteor.authState.toRaw())"
             
-            self.userData = self.meteor.collections["users"] as? NSMutableArray
-            var currentUser = self.userData[0] as NSDictionary
-            var userTokens = currentUser["services"]?["resume"] as NSDictionary
-            var lastToken = userTokens["loginTokens"]?.lastObject as NSDictionary
-            var loginToken = lastToken["hashedToken"] as NSString
-            
-            println(loginToken)
-
-            NSUserDefaults.standardUserDefaults().setObject(loginToken, forKey:"LoginToken")
+//            self.userData = self.meteor.collections["users"] as? NSMutableArray
+//            var currentUser = self.userData[0] as NSDictionary
+//            var userTokens = currentUser["services"]?["resume"] as NSDictionary
+//            var lastToken = userTokens["loginTokens"]?.lastObject as NSDictionary
+//            var loginToken = lastToken["hashedToken"] as NSString
+//            
+//            println(loginToken)
+//
+//            NSUserDefaults.standardUserDefaults().setObject(loginToken, forKey:"LoginToken")
             NSUserDefaults.standardUserDefaults().setObject(self.username.text, forKey:"Username")
             NSUserDefaults.standardUserDefaults().setObject(self.password.text, forKey:"Password")
             NSUserDefaults.standardUserDefaults().synchronize()
@@ -74,31 +74,40 @@ class LoginViewController: UIViewController {
         })
     }
     
-    @IBAction func tappedResumeLoginButton(sender: AnyObject) {
-        var loginToken: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("LoginToken")
-        var username: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("Username")
-        var password: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("Password")
-        println(loginToken)
+    @IBAction func tappedReconnectButton(sender: AnyObject) {
+        self.meteor.reconnect()
+//        var loginToken: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("LoginToken")
+//        var username: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("Username")
+//        var password: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("Password")
+//        println(loginToken)
+//        
+//        if (!meteor.websocketReady) {
+//            let notConnectedAlert = UIAlertView(title: "Connection Error", message: "Can't find the TopTask server, try again", delegate: nil, cancelButtonTitle: "OK")
+//            notConnectedAlert.show()
+//            return
+//        }
+//        var parameters:NSDictionary = ["resume": loginToken!]
+//        //var parameters:NSArray = [username!,password!]
+//        println(parameters)
+//        
+//        meteor.logonWithUserParameters(parameters , responseCallback: { (response, error) -> Void in
+//            if ((error) != nil) {
+//                UIAlertView(title: "TopTask", message:error.localizedDescription, delegate: nil, cancelButtonTitle: "Try Again").show()
+//                return
+//            }
+//            self.logStatus.text = "\(self.meteor.authState.toRaw())"
+//        })
         
-        if (!meteor.websocketReady) {
-            let notConnectedAlert = UIAlertView(title: "Connection Error", message: "Can't find the TopTask server, try again", delegate: nil, cancelButtonTitle: "OK")
-            notConnectedAlert.show()
-            return
-        }
-        //var parameters:NSArray = [loginToken!]
-        var parameters:NSArray = [username!,password!]
-        println(parameters)
-        
-        meteor.logonWithEmail(username as NSString, password: password as NSString, responseCallback: {(response, error) -> Void in
-            if((error) != nil) {
-                UIAlertView(title: "TopTask", message:error.localizedDescription, delegate: nil, cancelButtonTitle: "Try Again").show()
-                return
-            }
-            
-            self.logStatus.text = "\(self.meteor.authState.toRaw())"
-            
-            //self.performSegueWithIdentifier("segueLogin", sender: self)
-            })
+//        meteor.logonWithEmail(username as NSString, password: password as NSString, responseCallback: {(response, error) -> Void in
+//            if((error) != nil) {
+//                UIAlertView(title: "TopTask", message:error.localizedDescription, delegate: nil, cancelButtonTitle: "Try Again").show()
+//                return
+//            }
+//            
+//            self.logStatus.text = "\(self.meteor.authState.toRaw())"
+//            
+//            //self.performSegueWithIdentifier("segueLogin", sender: self)
+//            })
     }
     
     @IBAction func tappedLogoutButton(sender: AnyObject) {
@@ -106,10 +115,15 @@ class LoginViewController: UIViewController {
         self.logStatus.text = "\(self.meteor.authState.toRaw())"
     }
 
+    @IBAction func tappedDisconnectButton(sender: AnyObject) {
+        self.meteor.disconnect()
+    }
+    
     @IBAction func tappedStatusButton(sender: AnyObject) {
         self.logStatus.text = "\(self.meteor.authState.toRaw())"
         self.userData = self.meteor.collections["users"] as? NSMutableArray
-        println(self.userData)
+        println(self.userData?.lastObject)
+        println(meteor.connected)
     }
     
     override func viewDidLoad() {
