@@ -124,6 +124,9 @@ class LoginViewController: UIViewController {
         self.userData = self.meteor.collections["users"] as? NSMutableArray
         println(self.userData?.lastObject)
         println(meteor.connected)
+        self.lists = self.meteor.collections["lists"] as? NSMutableArray
+        println("lists \(self.lists)")
+
     }
     
     override func viewDidLoad() {
