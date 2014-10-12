@@ -23,18 +23,16 @@ class LoginViewController: UIViewController {
     var userData:NSMutableArray!
     var lists:NSMutableArray!
     
-    override func viewWillAppear(animated: Bool) {
-        let delegate = UIApplication.sharedApplication().delegate as AppDelegate;
-        meteor = delegate.meteorClient
-        var observingOption = NSKeyValueObservingOptions.New
-        meteor.addObserver(self, forKeyPath:"websocketReady", options: observingOption, context:nil)
-    }
-    
     override func observeValueForKeyPath(keyPath: String!, ofObject object: AnyObject!, change: [NSObject : AnyObject]!, context: UnsafeMutablePointer<()>) {
-        
+        println("listener called")
+        println("listener: websocketReady: ", meteor.websocketReady)
         if (keyPath == "websocketReady" && meteor.websocketReady) {
-            connectionStatusText.text = "Connected to Todo Server"
+            connectionStatusText.text = "Connected to Todo server"
             var image:UIImage = UIImage(named: "green_light.png")
+            connectionStatusLight.image = image
+        } else {
+            connectionStatusText.text = "Not connected to the server"
+            var image:UIImage = UIImage(named: "red_light.png")
             connectionStatusLight.image = image
         }
     }
@@ -54,21 +52,9 @@ class LoginViewController: UIViewController {
             
             self.logStatus.text = "\(self.meteor.authState.toRaw())"
             
-//            self.userData = self.meteor.collections["users"] as? NSMutableArray
-//            var currentUser = self.userData[0] as NSDictionary
-//            var userTokens = currentUser["services"]?["resume"] as NSDictionary
-//            var lastToken = userTokens["loginTokens"]?.lastObject as NSDictionary
-//            var loginToken = lastToken["hashedToken"] as NSString
-//            
-//            println(loginToken)
-//
-//            NSUserDefaults.standardUserDefaults().setObject(loginToken, forKey:"LoginToken")
-            NSUserDefaults.standardUserDefaults().setObject(self.username.text, forKey:"Username")
-            NSUserDefaults.standardUserDefaults().setObject(self.password.text, forKey:"Password")
-            NSUserDefaults.standardUserDefaults().synchronize()
-            
-            //self.lists = self.meteor.collections["lists"] as? NSMutableArray
-            //println("lists \(self.lists)")
+            //let sessionToken = meteor.sessionToken
+            //NSUserDefaults.standardUserDefaults().setObject(sessionToken, forKey:"sessionToken")
+            //NSUserDefaults.standardUserDefaults().synchronize()
 
             //self.performSegueWithIdentifier("segueLogin", sender: self)
         })
@@ -76,7 +62,7 @@ class LoginViewController: UIViewController {
     
     @IBAction func tappedReconnectButton(sender: AnyObject) {
         self.meteor.reconnect()
-//        var loginToken: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("LoginToken")
+//        var loginToken: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("sessionToken")
 //        var username: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("Username")
 //        var password: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("Password")
 //        println(loginToken)
@@ -126,12 +112,30 @@ class LoginViewController: UIViewController {
         println(meteor.connected)
         self.lists = self.meteor.collections["lists"] as? NSMutableArray
         println("lists \(self.lists)")
+        println("status: websocketReady: ", meteor.websocketReady)
 
     }
+    
+//    @IBAction func tappedMainScreenButton(sender: AnyObject) {
+//        self.performSegueWithIdentifier("segueToMain", sender: self)
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let delegate = UIApplication.sharedApplication().delegate as AppDelegate;
+        meteor = delegate.meteorClient
+        
+        println("observer called")
+        var observingOption = NSKeyValueObservingOptions.New
+        meteor.addObserver(self, forKeyPath:"websocketReady", options: observingOption, context:nil)
+        println("observer: websocketReady: ", meteor.websocketReady)
+        
+        let barViewControllers = self.tabBarController?.viewControllers
+        let fvc = barViewControllers![1] as FavouritesViewController
+        fvc.meteor = self.meteor
+        fvc.userId = self.meteor.userId
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -139,15 +143,15 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        if (segue.identifier == "segueLogin") {
-            let navigationController = segue!.destinationViewController as UINavigationController
-            
-            let fvc = navigationController.viewControllers[0] as FavouritesViewController;
-            fvc.meteor = self.meteor
-            fvc.userId = self.meteor.userId
-        }
-    }
+//    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+//        if (segue.identifier == "segueToMain") {
+//            let navigationController = segue!.destinationViewController as UINavigationController
+//            
+//            let fvc = navigationController.viewControllers[0] as FavouritesViewController;
+//            fvc.meteor = self.meteor
+//            fvc.userId = self.meteor.userId
+//        }
+//    }
     
     /*
     // MARK: - Navigation

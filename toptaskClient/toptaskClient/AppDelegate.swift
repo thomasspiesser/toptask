@@ -20,7 +20,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //meteorClient.addSubscription("things")
         meteorClient.addSubscription("lists")
-        //meteorClient.addSubscription("userData")
+        
+        var loginToken: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("sessionToken")
+        
+        if let token = loginToken {
+            println("yes, value is: \(token)")
+            //meteorClient.sessionToken = token as NSString
+        } else {
+            println("no, token in nil")
+        }
+        
+        //meteorClient.sessionToken = loginToken
+        
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reportConnection", name: MeteorClientDidConnectNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reportDisconnection", name: MeteorClientDidDisconnectNotification, object: nil)

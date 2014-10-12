@@ -15,27 +15,15 @@ class FavouritesViewController: UIViewController {
     @IBOutlet weak var Task3: UIButton!
     @IBOutlet weak var Task4: UIButton!
     
-    @IBOutlet weak var LogoutButton: UIBarButtonItem!
-    
     var meteor:MeteorClient!
     var userId:NSString!
     //var lists:NSMutableArray!
     
-//    required init(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-//    
-//    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!, meteor: MeteorClient!) {
-//        
-//        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-//        self.meteor = meteor
-//        //self.lists = self.meteor.collections["lists"] as NSMutableArray
-//
-//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,10 +31,13 @@ class FavouritesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func didTapLogoutButton(sender: AnyObject) {
-        meteor.logout()
-        
-    }
+//    @IBAction func didTapLogoutButton(sender: AnyObject) {
+//        meteor.logout()
+//        //self.performSegueWithIdentifier("segueLogout", sender: self)
+//        let storyboard: UIStoryboard = self.storyboard
+//        let initVc = storyboard.instantiateInitialViewController() as UIViewController
+//        self.presentViewController(initVc, animated: true, completion: nil)
+//    }
 
     /*
     // MARK: - Navigation
