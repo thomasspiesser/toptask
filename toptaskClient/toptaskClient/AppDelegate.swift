@@ -21,17 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //meteorClient.addSubscription("things")
         meteorClient.addSubscription("lists")
         
+        // check if there is a sessionToken stored on the device:
         var loginToken: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("sessionToken")
-        
-        if let token = loginToken {
+        if let token = loginToken as? NSString {
             println("yes, value is: \(token)")
-            //meteorClient.sessionToken = token as NSString
+            println(meteorClient.websocketReady)
         } else {
             println("no, token in nil")
         }
-        
-        //meteorClient.sessionToken = loginToken
-        
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reportConnection", name: MeteorClientDidConnectNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reportDisconnection", name: MeteorClientDidDisconnectNotification, object: nil)
@@ -42,6 +39,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func reportConnection() {
         println("================> connected to server!")
+//        meteorClient.logonWithSessionToken(, password: self.password.text, responseCallback: {(response, error) -> Void in
+//            if((error) != nil) {
+//                UIAlertView(title: "TopTask", message:error.localizedDescription, delegate: nil, cancelButtonTitle: "Try Again").show()
+//                return
+//            }
+//            
+//            self.logStatus.text = "\(self.meteor.authState.toRaw())"
+//            
+//            let sessionToken = self.meteor.sessionToken
+//            NSUserDefaults.standardUserDefaults().setObject(sessionToken, forKey:"sessionToken")
+//            NSUserDefaults.standardUserDefaults().synchronize()
+        
+            //self.performSegueWithIdentifier("segueLogin", sender: self)
+//        })
+
     }
     
     func reportDisconnection() {

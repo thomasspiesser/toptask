@@ -30,7 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AA46BCA07CF14A34BC2C3DED /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		0CE9A2E1B55469F8BED16332 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D077B69082B49B2A9BF78120 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		DBF2FA9271CB4D0CA1160A65 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E902254A19C87D1E00E91130 /* toptaskClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "toptaskClient-Bridging-Header.h"; sourceTree = "<group>"; };
 		E902254B19C87D1F00E91130 /* bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bridge.m; sourceTree = "<group>"; };
@@ -75,6 +76,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6F00DF5FABAB42FFEEF54827 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0CE9A2E1B55469F8BED16332 /* Pods.debug.xcconfig */,
+				D077B69082B49B2A9BF78120 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E9C6A85E19C87A2600129844 = {
 			isa = PBXGroup;
 			children = (
@@ -83,8 +93,8 @@
 				E9C6A86919C87A2600129844 /* toptaskClient */,
 				E9C6A87C19C87A2700129844 /* toptaskClientTests */,
 				E9C6A86819C87A2600129844 /* Products */,
-				AA46BCA07CF14A34BC2C3DED /* Pods.xcconfig */,
 				3CEC5785A9D04D5FBE050C36 /* Frameworks */,
+				6F00DF5FABAB42FFEEF54827 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -248,7 +258,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		89D43C011CA84722AE8E558A /* Check Pods Manifest.lock */ = {
@@ -378,13 +388,13 @@
 		};
 		E9C6A88419C87A2700129844 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA46BCA07CF14A34BC2C3DED /* Pods.xcconfig */;
+			baseConfigurationReference = 0CE9A2E1B55469F8BED16332 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = toptaskClient/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "toptaskClient-Bridging-Header.h";
@@ -394,13 +404,13 @@
 		};
 		E9C6A88519C87A2700129844 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AA46BCA07CF14A34BC2C3DED /* Pods.xcconfig */;
+			baseConfigurationReference = D077B69082B49B2A9BF78120 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = toptaskClient/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "toptaskClient-Bridging-Header.h";
