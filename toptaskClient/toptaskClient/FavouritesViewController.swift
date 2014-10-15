@@ -19,11 +19,11 @@ class FavouritesViewController: UIViewController {
     var userId:NSString!
     //var lists:NSMutableArray!
     
+    var taskItems: NSMutableArray = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,22 +31,55 @@ class FavouritesViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-//    @IBAction func didTapLogoutButton(sender: AnyObject) {
-//        meteor.logout()
-//        //self.performSegueWithIdentifier("segueLogout", sender: self)
-//        let storyboard: UIStoryboard = self.storyboard
-//        let initVc = storyboard.instantiateInitialViewController() as UIViewController
-//        self.presentViewController(initVc, animated: true, completion: nil)
-//    }
+    func loadSomeData() {
+        var item1 = TaskItem(name: "milk")
+        self.taskItems.addObject(item1)
+        var item2 = TaskItem(name: "eggses")
+        self.taskItems.addObject(item2)
+        var item3 = TaskItem(name: "honey")
+        self.taskItems.addObject(item3)
+    }
 
-    /*
+    func loadSomeOtherData() {
+        var item1 = TaskItem(name: "milkyway")
+        self.taskItems.addObject(item1)
+        var item2 = TaskItem(name: "eggsalat")
+        self.taskItems.addObject(item2)
+        var item3 = TaskItem(name: "honeybear")
+        self.taskItems.addObject(item3)
+    }
+    
+    @IBAction func didTapTask2Button(sender: AnyObject) {
+        var tblVC = self.childViewControllers[0] as CurrentTasksTableViewController
+        self.taskItems.removeAllObjects()
+        loadSomeData()
+        tblVC.taskItems = taskItems
+        tblVC.tableView.reloadData()
+        tblVC.tableView.hidden = false
+    }
+
+    @IBAction func didTapTask4Button(sender: AnyObject) {
+        var tblVC = self.childViewControllers[0] as CurrentTasksTableViewController
+        self.taskItems.removeAllObjects()
+        loadSomeOtherData()
+        tblVC.taskItems = taskItems
+        tblVC.tableView.reloadData()
+        tblVC.tableView.hidden = false
+    }
+    
+    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+        var tblVC = self.childViewControllers[0] as CurrentTasksTableViewController
+        tblVC.tableView.hidden = true
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "EmbedTable") {
+            var tblVC = segue.destinationViewController as CurrentTasksTableViewController
+            tblVC.tableView.hidden = true
+        }
     }
-    */
 
 }

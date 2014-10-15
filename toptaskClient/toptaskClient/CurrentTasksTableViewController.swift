@@ -14,7 +14,6 @@ class CurrentTasksTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadInitialData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -22,18 +21,6 @@ class CurrentTasksTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    func loadInitialData() {
-        
-        var item1 = TaskItem(name: "milk")
-        self.taskItems.addObject(item1)
-        
-        var item2 = TaskItem(name: "eggs")
-        self.taskItems.addObject(item2)
-        
-        var item3 = TaskItem(name: "honey")
-        self.taskItems.addObject(item3)
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -72,7 +59,11 @@ class CurrentTasksTableViewController: UITableViewController {
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         var tappedItem: TaskItem = self.taskItems.objectAtIndex(indexPath.row) as TaskItem
+        if tappedItem.checked {
+            tappedItem.checkCount += 1
+        }
         tappedItem.checked = !tappedItem.checked
+        println(tappedItem.checkCount)
         tableView.reloadData()
     }
 

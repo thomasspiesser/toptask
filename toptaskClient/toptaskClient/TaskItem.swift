@@ -11,6 +11,7 @@ import UIKit
 class TaskItem: NSObject {
     var taskName: NSString = ""
     var checked: Bool = false
+    var checkCount: Int = 0
     var creationDate: NSDate = NSDate()
     
     init(name:String){
