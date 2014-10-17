@@ -11,11 +11,15 @@ import UIKit
 class TopTasksTableVC: UITableViewController {
     
     var taskItems: NSMutableArray = []
+    var sortedTaskItems: =[]
 
     override func viewDidLoad() {
         super.viewDidLoad()
         println("top")
-        loadSomeData()
+        println(self.taskItems)
+        taskItems.sort({ $0.checkCount < $1.checkCount })
+        
+        //loadSomeData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -24,11 +28,11 @@ class TopTasksTableVC: UITableViewController {
     }
     
     func loadSomeData() {
-        var item1 = TaskItem(name: "milk")
+        var item1 = TaskItem(name: "milk", checkCount: 3)
         self.taskItems.addObject(item1)
-        var item2 = TaskItem(name: "eggses")
+        var item2 = TaskItem(name: "eggses", checkCount: 2)
         self.taskItems.addObject(item2)
-        var item3 = TaskItem(name: "honey")
+        var item3 = TaskItem(name: "honey", checkCount: 1)
         self.taskItems.addObject(item3)
     }
 

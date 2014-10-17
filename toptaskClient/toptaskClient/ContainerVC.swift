@@ -13,11 +13,13 @@ class ContainerVC: UIViewController {
     let SegueIdentifierFirst = "embedCurrentTaskTable"
     let SegueIdentifierSecond = "embedTopTaskTable"
     var currentSegueIdentifier: NSString?
+    
+    var taskItems: NSMutableArray = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.currentSegueIdentifier = SegueIdentifierFirst
-        performSegueWithIdentifier(currentSegueIdentifier, sender: self)
+        //performSegueWithIdentifier(currentSegueIdentifier, sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,8 +30,9 @@ class ContainerVC: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
         let destVC = segue.destinationViewController as UIViewController
-        if (segue.identifier == SegueIdentifierFirst)
-        {
+        if (segue.identifier == SegueIdentifierFirst) {
+            var tblVC = destVC as CurrentTasksTableVC
+            tblVC.taskItems = taskItems
             if (self.childViewControllers.count > 0) {
                 self.swapFromViewController(self.childViewControllers[0] as UIViewController, toViewController: destVC)
             }
@@ -40,8 +43,9 @@ class ContainerVC: UIViewController {
                 destVC.didMoveToParentViewController(self)
             }
         }
-        else if (segue.identifier == SegueIdentifierSecond)
-        {
+        else if (segue.identifier == SegueIdentifierSecond) {
+            var tblVC = destVC as TopTasksTableVC
+            tblVC.taskItems = taskItems
             self.swapFromViewController(self.childViewControllers[0] as UIViewController, toViewController: destVC)
         }
     }
@@ -63,9 +67,8 @@ class ContainerVC: UIViewController {
         )
     }
     
-    func swapViewControllers() {
-        println("triggered swapViewControllers")
-        self.currentSegueIdentifier = (self.currentSegueIdentifier == SegueIdentifierFirst) ? SegueIdentifierSecond : SegueIdentifierFirst
-        self.performSegueWithIdentifier(self.currentSegueIdentifier, sender:nil)
-    }
+//    func swapViewControllers() {
+//        self.currentSegueIdentifier = (self.currentSegueIdentifier == SegueIdentifierFirst) ? SegueIdentifierSecond : SegueIdentifierFirst
+//        self.performSegueWithIdentifier(self.currentSegueIdentifier, sender:nil)
+//    }
 }

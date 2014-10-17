@@ -11,10 +11,11 @@ import UIKit
 class TaskItem: NSObject {
     var taskName: NSString = ""
     var checked: Bool = false
-    var checkCount: Int = 0
+    var checkCount: Int
     var creationDate: NSDate = NSDate()
     
-    init(name:String){
+    init(name: String, checkCount: Int){
         self.taskName = name
+        self.checkCount = checkCount
     }
 }

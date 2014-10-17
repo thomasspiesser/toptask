@@ -14,8 +14,9 @@ class CurrentTasksTableVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadSomeOtherData()
+        //loadSomeOtherData()
         println("current")
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -24,11 +25,11 @@ class CurrentTasksTableVC: UITableViewController {
     }
     
     func loadSomeOtherData() {
-        var item1 = TaskItem(name: "milkyway")
+        var item1 = TaskItem(name: "milkyway", checkCount: 2)
         self.taskItems.addObject(item1)
-        var item2 = TaskItem(name: "eggsalat")
+        var item2 = TaskItem(name: "eggsalat", checkCount: 3)
         self.taskItems.addObject(item2)
-        var item3 = TaskItem(name: "honeybear")
+        var item3 = TaskItem(name: "honeybear", checkCount: 1)
         self.taskItems.addObject(item3)
     }
     
