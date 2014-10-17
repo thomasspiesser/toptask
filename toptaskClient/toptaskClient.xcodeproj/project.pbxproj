@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		63676927623F4AF7B526B1DB /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DBF2FA9271CB4D0CA1160A65 /* libPods.a */; };
 		E902254C19C87D1F00E91130 /* bridge.m in Sources */ = {isa = PBXBuildFile; fileRef = E902254B19C87D1F00E91130 /* bridge.m */; };
-		E9253F5419ED52CD00AA753B /* CurrentTasksTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9253F5319ED52CD00AA753B /* CurrentTasksTableViewController.swift */; };
+		E9253F5419ED52CD00AA753B /* CurrentTasksTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9253F5319ED52CD00AA753B /* CurrentTasksTableVC.swift */; };
 		E9253F5619ED890A00AA753B /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9253F5519ED890A00AA753B /* TaskItem.swift */; };
-		E944DFC119CC3F7F007F8B91 /* FavouritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E944DFBF19CC3F7F007F8B91 /* FavouritesViewController.swift */; };
+		E934463419EFD7F900C5EB0D /* TopTasksTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E934463319EFD7F900C5EB0D /* TopTasksTableVC.swift */; };
+		E934463619EFDF5A00C5EB0D /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E934463519EFDF5A00C5EB0D /* ContainerVC.swift */; };
+		E934463A19F127A600C5EB0D /* EmptySegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = E934463919F127A600C5EB0D /* EmptySegue.swift */; };
+		E944DFC119CC3F7F007F8B91 /* FavouritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E944DFBF19CC3F7F007F8B91 /* FavouritesVC.swift */; };
 		E944DFC419D18BA1007F8B91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E944DFC319D18BA1007F8B91 /* Main.storyboard */; };
 		E95D949519CB2299001D888F /* red_light.png in Resources */ = {isa = PBXBuildFile; fileRef = E95D949419CB2299001D888F /* red_light.png */; };
 		E95D949719CB22A2001D888F /* green_light.png in Resources */ = {isa = PBXBuildFile; fileRef = E95D949619CB22A2001D888F /* green_light.png */; };
-		E95D94A119CB25F3001D888F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D949F19CB25F3001D888F /* LoginViewController.swift */; };
+		E95D94A119CB25F3001D888F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E95D949F19CB25F3001D888F /* LoginVC.swift */; };
 		E9C6A86D19C87A2600129844 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C6A86C19C87A2600129844 /* AppDelegate.swift */; };
 		E9C6A87419C87A2600129844 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9C6A87319C87A2600129844 /* Images.xcassets */; };
 		E9C6A88019C87A2700129844 /* toptaskClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C6A87F19C87A2700129844 /* toptaskClientTests.swift */; };
@@ -37,13 +40,16 @@
 		DBF2FA9271CB4D0CA1160A65 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E902254A19C87D1E00E91130 /* toptaskClient-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "toptaskClient-Bridging-Header.h"; sourceTree = "<group>"; };
 		E902254B19C87D1F00E91130 /* bridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bridge.m; sourceTree = "<group>"; };
-		E9253F5319ED52CD00AA753B /* CurrentTasksTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentTasksTableViewController.swift; sourceTree = "<group>"; };
+		E9253F5319ED52CD00AA753B /* CurrentTasksTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentTasksTableVC.swift; sourceTree = "<group>"; };
 		E9253F5519ED890A00AA753B /* TaskItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
-		E944DFBF19CC3F7F007F8B91 /* FavouritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesViewController.swift; sourceTree = "<group>"; };
+		E934463319EFD7F900C5EB0D /* TopTasksTableVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTasksTableVC.swift; sourceTree = "<group>"; };
+		E934463519EFDF5A00C5EB0D /* ContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
+		E934463919F127A600C5EB0D /* EmptySegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptySegue.swift; sourceTree = "<group>"; };
+		E944DFBF19CC3F7F007F8B91 /* FavouritesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritesVC.swift; sourceTree = "<group>"; };
 		E944DFC319D18BA1007F8B91 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E95D949419CB2299001D888F /* red_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = red_light.png; sourceTree = "<group>"; };
 		E95D949619CB22A2001D888F /* green_light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = green_light.png; sourceTree = "<group>"; };
-		E95D949F19CB25F3001D888F /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		E95D949F19CB25F3001D888F /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		E9C6A86719C87A2600129844 /* toptaskClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = toptaskClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9C6A86B19C87A2600129844 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E9C6A86C19C87A2600129844 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,11 +121,14 @@
 			isa = PBXGroup;
 			children = (
 				E9C6A86C19C87A2600129844 /* AppDelegate.swift */,
-				E95D949F19CB25F3001D888F /* LoginViewController.swift */,
+				E95D949F19CB25F3001D888F /* LoginVC.swift */,
 				E944DFC319D18BA1007F8B91 /* Main.storyboard */,
-				E9253F5319ED52CD00AA753B /* CurrentTasksTableViewController.swift */,
+				E944DFBF19CC3F7F007F8B91 /* FavouritesVC.swift */,
+				E934463519EFDF5A00C5EB0D /* ContainerVC.swift */,
+				E934463319EFD7F900C5EB0D /* TopTasksTableVC.swift */,
+				E9253F5319ED52CD00AA753B /* CurrentTasksTableVC.swift */,
 				E9253F5519ED890A00AA753B /* TaskItem.swift */,
-				E944DFBF19CC3F7F007F8B91 /* FavouritesViewController.swift */,
+				E934463919F127A600C5EB0D /* EmptySegue.swift */,
 				E9C6A87319C87A2600129844 /* Images.xcassets */,
 				E9C6A86A19C87A2600129844 /* Supporting Files */,
 			);
@@ -289,12 +298,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E944DFC119CC3F7F007F8B91 /* FavouritesViewController.swift in Sources */,
+				E934463619EFDF5A00C5EB0D /* ContainerVC.swift in Sources */,
+				E944DFC119CC3F7F007F8B91 /* FavouritesVC.swift in Sources */,
+				E934463419EFD7F900C5EB0D /* TopTasksTableVC.swift in Sources */,
 				E9253F5619ED890A00AA753B /* TaskItem.swift in Sources */,
-				E95D94A119CB25F3001D888F /* LoginViewController.swift in Sources */,
-				E9253F5419ED52CD00AA753B /* CurrentTasksTableViewController.swift in Sources */,
+				E95D94A119CB25F3001D888F /* LoginVC.swift in Sources */,
+				E9253F5419ED52CD00AA753B /* CurrentTasksTableVC.swift in Sources */,
 				E902254C19C87D1F00E91130 /* bridge.m in Sources */,
 				E9C6A86D19C87A2600129844 /* AppDelegate.swift in Sources */,
+				E934463A19F127A600C5EB0D /* EmptySegue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

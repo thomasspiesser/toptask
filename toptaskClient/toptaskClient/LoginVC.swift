@@ -1,5 +1,5 @@
 //
-//  LoginViewController.swift
+//  LoginVC.swift
 //  toptaskClient
 //
 //  Created by Thomas Spiesser on 18.09.14.
@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class LoginViewController: UIViewController {
+class LoginVC: UIViewController {
 
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var username: UITextField!
@@ -52,16 +52,16 @@ class LoginViewController: UIViewController {
             
             self.logStatus.text = "\(self.meteor.authState.toRaw())"
             
-            let sessionToken = self.meteor.sessionToken
-            NSUserDefaults.standardUserDefaults().setObject(sessionToken, forKey:"sessionToken")
-            NSUserDefaults.standardUserDefaults().synchronize()
+//            let sessionToken = self.meteor.sessionToken
+//            NSUserDefaults.standardUserDefaults().setObject(sessionToken, forKey:"sessionToken")
+//            NSUserDefaults.standardUserDefaults().synchronize()
 
             //self.performSegueWithIdentifier("segueLogin", sender: self)
         })
     }
     
     @IBAction func tappedReconnectButton(sender: AnyObject) {
-        self.meteor.reconnect()
+//        self.meteor.reconnect()
     }
     
     @IBAction func tappedLogoutButton(sender: AnyObject) {
@@ -100,7 +100,7 @@ class LoginViewController: UIViewController {
         println("observer: websocketReady: ", meteor.websocketReady)
         
         let barViewControllers = self.tabBarController?.viewControllers
-        let fvc = barViewControllers![1] as FavouritesViewController
+        let fvc = barViewControllers![1] as FavouritesVC
         fvc.meteor = self.meteor
         fvc.userId = self.meteor.userId
         
@@ -115,7 +115,7 @@ class LoginViewController: UIViewController {
 //        if (segue.identifier == "segueToMain") {
 //            let navigationController = segue!.destinationViewController as UINavigationController
 //            
-//            let fvc = navigationController.viewControllers[0] as FavouritesViewController;
+//            let fvc = navigationController.viewControllers[0] as FavouritesVC
 //            fvc.meteor = self.meteor
 //            fvc.userId = self.meteor.userId
 //        }

@@ -1,19 +1,21 @@
 //
-//  CurrentTasksTableViewController.swift
+//  TopTasksTableVC.swift
 //  toptaskClient
 //
-//  Created by Thomas Spiesser on 14.10.14.
+//  Created by Thomas Spiesser on 16.10.14.
 //  Copyright (c) 2014 Thomas Spiesser. All rights reserved.
 //
 
 import UIKit
 
-class CurrentTasksTableViewController: UITableViewController {
+class TopTasksTableVC: UITableViewController {
     
     var taskItems: NSMutableArray = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        println("top")
+        loadSomeData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -21,6 +23,15 @@ class CurrentTasksTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    func loadSomeData() {
+        var item1 = TaskItem(name: "milk")
+        self.taskItems.addObject(item1)
+        var item2 = TaskItem(name: "eggses")
+        self.taskItems.addObject(item2)
+        var item3 = TaskItem(name: "honey")
+        self.taskItems.addObject(item3)
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -40,9 +51,8 @@ class CurrentTasksTableViewController: UITableViewController {
         return self.taskItems.count
     }
 
-    
     override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ListPrototypeCell", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("TopListPrototypeCell", forIndexPath: indexPath) as UITableViewCell
         var taskitem: TaskItem = self.taskItems.objectAtIndex(indexPath.row) as TaskItem
         
         cell.textLabel.text = taskitem.taskName
@@ -52,7 +62,7 @@ class CurrentTasksTableViewController: UITableViewController {
         else {
             cell.accessoryType = .None
         }
-
+        
         return cell
     }
     
@@ -66,6 +76,7 @@ class CurrentTasksTableViewController: UITableViewController {
         println(tappedItem.checkCount)
         tableView.reloadData()
     }
+
 
     /*
     // Override to support conditional editing of the table view.

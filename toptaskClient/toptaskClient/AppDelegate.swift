@@ -22,13 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         meteorClient.addSubscription("lists")
         
         // check if there is a sessionToken stored on the device:
-        var loginToken: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("sessionToken")
-        if let token = loginToken as? NSString {
-            println("yes, value is: \(token)")
-            println(meteorClient.websocketReady)
-        } else {
-            println("no, token in nil")
-        }
+//        var loginToken: AnyObject? = NSUserDefaults.standardUserDefaults().objectForKey("sessionToken")
+//        if let token = loginToken as? NSString {
+//            println("yes, value is: \(token)")
+//            println(meteorClient.websocketReady)
+//        } else {
+//            println("no, token in nil")
+//        }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reportConnection", name: MeteorClientDidConnectNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reportDisconnection", name: MeteorClientDidDisconnectNotification, object: nil)

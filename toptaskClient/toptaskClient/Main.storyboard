@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="l2G-Gc-xEa">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
@@ -9,7 +10,7 @@
         <!--Item-->
         <scene sceneID="Pzc-Wf-PEJ">
             <objects>
-                <viewController id="U4O-01-44b" customClass="LoginViewController" customModule="toptaskClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="U4O-01-44b" customClass="LoginVC" customModule="toptaskClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="83A-Ol-PlK"/>
                         <viewControllerLayoutGuide type="bottom" id="xBM-ft-7GN"/>
@@ -306,6 +307,23 @@
                                 <exclude reference="ZFx-zL-PxB"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="BkF-Jm-JkV"/>
+                                <exclude reference="tbW-Ne-zug"/>
+                                <exclude reference="Fjs-FX-2jx"/>
+                                <exclude reference="37I-hR-b9P"/>
+                                <exclude reference="EG3-ct-0nM"/>
+                                <exclude reference="LKf-oa-yIZ"/>
+                                <exclude reference="bGw-8z-Ss4"/>
+                                <exclude reference="EqJ-Ac-hWo"/>
+                                <exclude reference="GfR-rS-n2q"/>
+                                <exclude reference="Tt7-S5-5R0"/>
+                                <exclude reference="YwC-Ym-Wx4"/>
+                                <exclude reference="p66-3i-X2l"/>
+                                <exclude reference="qkD-Li-qbG"/>
+                                <exclude reference="h7z-hF-Ygg"/>
+                                <exclude reference="qeP-iy-mTJ"/>
+                                <exclude reference="rtI-x9-Xai"/>
+                                <exclude reference="zOD-e7-ZXE"/>
                                 <exclude reference="0Wd-J9-o36"/>
                                 <exclude reference="3y3-ka-QeW"/>
                                 <exclude reference="sBc-bb-wvE"/>
@@ -323,8 +341,6 @@
                                 <exclude reference="OjB-ba-WK3"/>
                                 <exclude reference="i7w-Yw-DJY"/>
                                 <exclude reference="tAX-mY-1a0"/>
-                                <exclude reference="BkF-Jm-JkV"/>
-                                <exclude reference="tbW-Ne-zug"/>
                                 <exclude reference="D6m-hs-6H4"/>
                                 <exclude reference="ELv-lO-6yI"/>
                                 <exclude reference="XeS-1z-cEs"/>
@@ -333,21 +349,6 @@
                                 <exclude reference="nKm-dV-BHv"/>
                                 <exclude reference="tuL-LP-5ZR"/>
                                 <exclude reference="xbr-WP-KU4"/>
-                                <exclude reference="h7z-hF-Ygg"/>
-                                <exclude reference="qeP-iy-mTJ"/>
-                                <exclude reference="rtI-x9-Xai"/>
-                                <exclude reference="zOD-e7-ZXE"/>
-                                <exclude reference="EqJ-Ac-hWo"/>
-                                <exclude reference="GfR-rS-n2q"/>
-                                <exclude reference="Tt7-S5-5R0"/>
-                                <exclude reference="Fjs-FX-2jx"/>
-                                <exclude reference="37I-hR-b9P"/>
-                                <exclude reference="EG3-ct-0nM"/>
-                                <exclude reference="LKf-oa-yIZ"/>
-                                <exclude reference="bGw-8z-Ss4"/>
-                                <exclude reference="YwC-Ym-Wx4"/>
-                                <exclude reference="p66-3i-X2l"/>
-                                <exclude reference="qkD-Li-qbG"/>
                                 <exclude reference="krm-PJ-ePe"/>
                                 <exclude reference="kBb-oi-oPV"/>
                                 <exclude reference="Dpj-Ib-DAI"/>
@@ -364,6 +365,23 @@
                                 <include reference="ZFx-zL-PxB"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="BkF-Jm-JkV"/>
+                                <include reference="tbW-Ne-zug"/>
+                                <include reference="Fjs-FX-2jx"/>
+                                <include reference="37I-hR-b9P"/>
+                                <include reference="EG3-ct-0nM"/>
+                                <include reference="LKf-oa-yIZ"/>
+                                <include reference="bGw-8z-Ss4"/>
+                                <include reference="EqJ-Ac-hWo"/>
+                                <include reference="GfR-rS-n2q"/>
+                                <include reference="Tt7-S5-5R0"/>
+                                <exclude reference="YwC-Ym-Wx4"/>
+                                <include reference="p66-3i-X2l"/>
+                                <include reference="qkD-Li-qbG"/>
+                                <include reference="h7z-hF-Ygg"/>
+                                <include reference="qeP-iy-mTJ"/>
+                                <include reference="rtI-x9-Xai"/>
+                                <include reference="zOD-e7-ZXE"/>
                                 <exclude reference="0Wd-J9-o36"/>
                                 <include reference="3y3-ka-QeW"/>
                                 <include reference="sBc-bb-wvE"/>
@@ -381,8 +399,6 @@
                                 <include reference="OjB-ba-WK3"/>
                                 <include reference="i7w-Yw-DJY"/>
                                 <include reference="tAX-mY-1a0"/>
-                                <include reference="BkF-Jm-JkV"/>
-                                <include reference="tbW-Ne-zug"/>
                                 <exclude reference="D6m-hs-6H4"/>
                                 <include reference="ELv-lO-6yI"/>
                                 <include reference="XeS-1z-cEs"/>
@@ -391,21 +407,6 @@
                                 <exclude reference="nKm-dV-BHv"/>
                                 <include reference="tuL-LP-5ZR"/>
                                 <include reference="xbr-WP-KU4"/>
-                                <include reference="h7z-hF-Ygg"/>
-                                <include reference="qeP-iy-mTJ"/>
-                                <include reference="rtI-x9-Xai"/>
-                                <include reference="zOD-e7-ZXE"/>
-                                <include reference="EqJ-Ac-hWo"/>
-                                <include reference="GfR-rS-n2q"/>
-                                <include reference="Tt7-S5-5R0"/>
-                                <include reference="Fjs-FX-2jx"/>
-                                <include reference="37I-hR-b9P"/>
-                                <include reference="EG3-ct-0nM"/>
-                                <include reference="LKf-oa-yIZ"/>
-                                <include reference="bGw-8z-Ss4"/>
-                                <exclude reference="YwC-Ym-Wx4"/>
-                                <include reference="p66-3i-X2l"/>
-                                <include reference="qkD-Li-qbG"/>
                                 <include reference="krm-PJ-ePe"/>
                                 <include reference="kBb-oi-oPV"/>
                                 <include reference="Dpj-Ib-DAI"/>
@@ -430,7 +431,7 @@
         <!--Item-->
         <scene sceneID="77V-hL-VDD">
             <objects>
-                <viewController id="3cJ-Vi-sbf" customClass="FavouritesViewController" customModule="toptaskClient" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3cJ-Vi-sbf" customClass="FavouritesVC" customModule="toptaskClient" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="op3-DR-S3F"/>
                         <viewControllerLayoutGuide type="bottom" id="FKH-wg-dl2"/>
@@ -456,21 +457,25 @@
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b72-0p-I64">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <state key="normal" title="Task2">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapTask2Button:" destination="3cJ-Vi-sbf" eventType="touchUpInside" id="zMU-VD-F3l"/>
+                                    <outletCollection property="gestureRecognizers" destination="6Ku-Np-8Ls" appends="YES" id="ELC-o4-TEL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nju-8M-aUM">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <state key="normal" title="Task4">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapTask4Button:" destination="3cJ-Vi-sbf" eventType="touchUpInside" id="QXf-CU-hwh"/>
+                                    <outletCollection property="gestureRecognizers" destination="8EJ-wW-JIL" appends="YES" id="75f-TN-pJR"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My personal Top Tasks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNE-dU-jsV">
@@ -482,7 +487,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJv-bg-aCO">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <connections>
-                                    <segue destination="NDz-6z-Wy6" kind="embed" identifier="EmbedTable" id="ffy-UV-Am1"/>
+                                    <segue destination="T54-x1-BxE" kind="embed" identifier="EmbedTables" id="GrQ-Ay-T5Y"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -532,9 +537,6 @@
                                 <exclude reference="TmI-29-cNH"/>
                                 <exclude reference="fIA-P3-xBa"/>
                                 <exclude reference="np8-Se-Yj7"/>
-                                <exclude reference="sM5-Bz-edE"/>
-                                <exclude reference="uDc-zN-w7f"/>
-                                <exclude reference="zmq-ec-oYu"/>
                                 <exclude reference="Hmo-C9-W9H"/>
                                 <exclude reference="KR9-GW-A6j"/>
                                 <exclude reference="0Q9-yR-kJM"/>
@@ -548,11 +550,14 @@
                                 <exclude reference="wkl-ie-3ed"/>
                                 <exclude reference="AQC-4V-zm1"/>
                                 <exclude reference="Qap-wa-wqW"/>
+                                <exclude reference="sM5-Bz-edE"/>
+                                <exclude reference="uDc-zN-w7f"/>
+                                <exclude reference="zmq-ec-oYu"/>
+                                <exclude reference="F6O-ue-gxV"/>
+                                <exclude reference="ZnA-lv-09U"/>
                                 <exclude reference="Bu5-yi-Ma2"/>
                                 <exclude reference="E5g-8o-flC"/>
                                 <exclude reference="ycY-97-UQI"/>
-                                <exclude reference="F6O-ue-gxV"/>
-                                <exclude reference="ZnA-lv-09U"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -570,9 +575,6 @@
                                 <include reference="TmI-29-cNH"/>
                                 <exclude reference="fIA-P3-xBa"/>
                                 <include reference="np8-Se-Yj7"/>
-                                <include reference="sM5-Bz-edE"/>
-                                <include reference="uDc-zN-w7f"/>
-                                <exclude reference="zmq-ec-oYu"/>
                                 <include reference="Hmo-C9-W9H"/>
                                 <include reference="KR9-GW-A6j"/>
                                 <include reference="0Q9-yR-kJM"/>
@@ -586,11 +588,14 @@
                                 <include reference="wkl-ie-3ed"/>
                                 <include reference="AQC-4V-zm1"/>
                                 <include reference="Qap-wa-wqW"/>
+                                <include reference="sM5-Bz-edE"/>
+                                <include reference="uDc-zN-w7f"/>
+                                <exclude reference="zmq-ec-oYu"/>
+                                <exclude reference="F6O-ue-gxV"/>
+                                <include reference="ZnA-lv-09U"/>
                                 <include reference="Bu5-yi-Ma2"/>
                                 <include reference="E5g-8o-flC"/>
                                 <include reference="ycY-97-UQI"/>
-                                <exclude reference="F6O-ue-gxV"/>
-                                <include reference="ZnA-lv-09U"/>
                             </mask>
                         </variation>
                     </view>
@@ -608,18 +613,29 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYq-LM-xbe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="8EJ-wW-JIL">
+                    <connections>
+                        <action selector="didLongPressTask4Button:" destination="3cJ-Vi-sbf" id="z5l-UA-LUq"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="6Ku-Np-8Ls">
+                    <connections>
+                        <action selector="didLongPressTask2Button:" destination="3cJ-Vi-sbf" id="4ii-QW-ocr"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2481" y="549.75"/>
         </scene>
-        <!--Current Tasks Table View Controller-->
+        <!--Current Tasks TableVC-->
         <scene sceneID="3NE-ub-Elc">
             <objects>
-                <tableViewController id="NDz-6z-Wy6" customClass="CurrentTasksTableViewController" customModule="toptaskClient" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="NDz-6z-Wy6" customClass="CurrentTasksTableVC" customModule="toptaskClient" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="poQ-Ku-Pmc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListPrototypeCell" id="AWe-Ae-drH">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CurrentListPrototypeCell" id="AWe-Ae-drH">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AWe-Ae-drH" id="nGt-Ih-lD3">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -634,7 +650,55 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gm6-h8-rEL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3360" y="549.375"/>
+            <point key="canvasLocation" x="4236" y="180"/>
+        </scene>
+        <!--ContainerVC-->
+        <scene sceneID="GCB-Uj-Kzx">
+            <objects>
+                <viewController id="T54-x1-BxE" customClass="ContainerVC" customModule="toptaskClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m7M-FX-q7T"/>
+                        <viewControllerLayoutGuide type="bottom" id="owt-wa-yag"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FJd-5s-UfW">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="NDz-6z-Wy6" kind="custom" identifier="embedCurrentTaskTable" customClass="EmptySegue" id="Obl-Et-2YA"/>
+                        <segue destination="2bz-1C-DNh" kind="custom" identifier="embedTopTaskTable" customClass="EmptySegue" id="mgk-l0-WrR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wOY-tU-BwU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3381" y="549.375"/>
+        </scene>
+        <!--Top Tasks TableVC-->
+        <scene sceneID="Axf-Vx-jG3">
+            <objects>
+                <tableViewController id="2bz-1C-DNh" customClass="TopTasksTableVC" customModule="toptaskClient" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="TQ3-f4-in5">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopListPrototypeCell" id="04I-od-wxS">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="04I-od-wxS" id="SH5-Or-bXY">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="2bz-1C-DNh" id="E61-fu-MQN"/>
+                            <outlet property="delegate" destination="2bz-1C-DNh" id="Bgd-67-m9O"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qP3-aC-PUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4209" y="861"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="NbC-2H-RbH">
@@ -655,28 +719,11 @@
             </objects>
             <point key="canvasLocation" x="702" y="549.75"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="6iP-7l-7uw">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="SH2-pM-F6d" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mPN-BW-2Qf"/>
-                        <viewControllerLayoutGuide type="bottom" id="ZNP-hj-B4X"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="eZY-6B-5qw">
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <toolbarItems/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YxJ-oo-GYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
     <resources>
         <image name="red_light.png" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cvv-3d-x59"/>
+        <segue reference="GVR-rl-d77"/>
     </inferredMetricsTieBreakers>
 </document>

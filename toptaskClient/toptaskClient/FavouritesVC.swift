@@ -1,5 +1,5 @@
 //
-//  FavouritesViewController.swift
+//  FavouritesVC.swift
 //  toptaskClient
 //
 //  Created by Thomas Spiesser on 19.09.14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavouritesViewController: UIViewController {
+class FavouritesVC: UIViewController {
     
     @IBOutlet weak var Task1: UIButton!
     @IBOutlet weak var Task2: UIButton!
@@ -18,6 +18,8 @@ class FavouritesViewController: UIViewController {
     var meteor:MeteorClient!
     var userId:NSString!
     //var lists:NSMutableArray!
+    
+    var containerVC: ContainerVC?
     
     var taskItems: NSMutableArray = []
 
@@ -50,35 +52,47 @@ class FavouritesViewController: UIViewController {
     }
     
     @IBAction func didTapTask2Button(sender: AnyObject) {
-        var tblVC = self.childViewControllers[0] as CurrentTasksTableViewController
-        self.taskItems.removeAllObjects()
-        loadSomeData()
-        tblVC.taskItems = taskItems
-        tblVC.tableView.reloadData()
-        tblVC.tableView.hidden = false
+//        var tblVC = self.childViewControllers[0] as CurrentTasksTableVC
+//        self.taskItems.removeAllObjects()
+//        loadSomeData()
+//        tblVC.taskItems = taskItems
+//        tblVC.tableView.reloadData()
+//        tblVC.tableView.hidden = false
+    }
+    
+    @IBAction func didLongPressTask2Button(sender: UILongPressGestureRecognizer) {
+        if sender.state == .Ended {
+            println(sender)
+        }
     }
 
     @IBAction func didTapTask4Button(sender: AnyObject) {
-        var tblVC = self.childViewControllers[0] as CurrentTasksTableViewController
-        self.taskItems.removeAllObjects()
-        loadSomeOtherData()
-        tblVC.taskItems = taskItems
-        tblVC.tableView.reloadData()
-        tblVC.tableView.hidden = false
+//        var tblVC = self.childViewControllers[0] as CurrentTasksTableVC
+//        self.taskItems.removeAllObjects()
+//        loadSomeOtherData()
+//        tblVC.taskItems = taskItems
+//        tblVC.tableView.reloadData()
+//        tblVC.tableView.hidden = false
+        self.containerVC?.swapViewControllers()
     }
     
-    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
-        var tblVC = self.childViewControllers[0] as CurrentTasksTableViewController
-        tblVC.tableView.hidden = true
+    @IBAction func didLongPressTask4Button(sender: UILongPressGestureRecognizer) {
+        if sender.state == .Ended {
+            println(sender)
+        }
     }
+    
+//    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+//        var tblVC = self.childViewControllers[0] as CurrentTasksTableVC
+//        tblVC.tableView.hidden = true
+//    }
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        if (segue.identifier == "EmbedTable") {
-            var tblVC = segue.destinationViewController as CurrentTasksTableViewController
-            tblVC.tableView.hidden = true
+        if (segue.identifier == "EmbedTables") {
+            self.containerVC = segue.destinationViewController as ContainerVC
         }
     }
 
