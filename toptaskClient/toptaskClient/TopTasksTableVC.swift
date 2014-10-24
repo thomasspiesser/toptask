@@ -11,13 +11,22 @@ import UIKit
 class TopTasksTableVC: UITableViewController {
     
     var taskItems: NSMutableArray = []
-    var sortedTaskItems: =[]
+    var sortedTaskItems: [TaskItem] = []
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         println("top")
-        println(self.taskItems)
-        taskItems.sort({ $0.checkCount < $1.checkCount })
+        println("\(self.taskItems)")
+        
+        var swiftSortedTaskItemsArray = self.taskItems as AnyObject as [TaskItem]
+        
+        println(swiftSortedTaskItemsArray)
+        
+        swiftSortedTaskItemsArray.sort({ $0.checkCount < $1.checkCount })
+        
+        println(swiftSortedTaskItemsArray)
         
         //loadSomeData()
         // Uncomment the following line to preserve selection between presentations
@@ -43,19 +52,19 @@ class TopTasksTableVC: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView!) -> Int {
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
         return 1
     }
 
-    override func tableView(tableView: UITableView!, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         return self.taskItems.count
     }
 
-    override func tableView(tableView: UITableView!, cellForRowAtIndexPath indexPath: NSIndexPath!) -> UITableViewCell! {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TopListPrototypeCell", forIndexPath: indexPath) as UITableViewCell
         var taskitem: TaskItem = self.taskItems.objectAtIndex(indexPath.row) as TaskItem
         
@@ -70,7 +79,7 @@ class TopTasksTableVC: UITableViewController {
         return cell
     }
     
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         var tappedItem: TaskItem = self.taskItems.objectAtIndex(indexPath.row) as TaskItem
         if tappedItem.checked {

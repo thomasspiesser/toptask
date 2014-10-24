@@ -28,11 +28,11 @@ class LoginVC: UIViewController {
         println("listener: websocketReady: ", meteor.websocketReady)
         if (keyPath == "websocketReady" && meteor.websocketReady) {
             connectionStatusText.text = "Connected to Todo server"
-            var image:UIImage = UIImage(named: "green_light.png")
+            var image:UIImage = UIImage(named: "green_light.png")!
             connectionStatusLight.image = image
         } else {
             connectionStatusText.text = "Not connected to the server"
-            var image:UIImage = UIImage(named: "red_light.png")
+            var image:UIImage = UIImage(named: "red_light.png")!
             connectionStatusLight.image = image
         }
     }
@@ -50,7 +50,7 @@ class LoginVC: UIViewController {
                 return
             }
             
-            self.logStatus.text = "\(self.meteor.authState.toRaw())"
+            self.logStatus.text = "\(self.meteor.authState.rawValue)"
             
 //            let sessionToken = self.meteor.sessionToken
 //            NSUserDefaults.standardUserDefaults().setObject(sessionToken, forKey:"sessionToken")
@@ -66,7 +66,7 @@ class LoginVC: UIViewController {
     
     @IBAction func tappedLogoutButton(sender: AnyObject) {
         self.meteor.logout()
-        self.logStatus.text = "\(self.meteor.authState.toRaw())"
+        self.logStatus.text = "\(self.meteor.authState.rawValue)"
     }
 
     @IBAction func tappedDisconnectButton(sender: AnyObject) {
@@ -74,7 +74,7 @@ class LoginVC: UIViewController {
     }
     
     @IBAction func tappedStatusButton(sender: AnyObject) {
-        self.logStatus.text = "\(self.meteor.authState.toRaw())"
+        self.logStatus.text = "\(self.meteor.authState.rawValue)"
         self.userData = self.meteor.collections["users"] as? NSMutableArray
         println(self.userData?.lastObject)
         println(meteor.connected)

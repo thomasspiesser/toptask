@@ -28,7 +28,7 @@ class ContainerVC: UIViewController {
 
     // MARK: - Navigation
 
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         let destVC = segue.destinationViewController as UIViewController
         if (segue.identifier == SegueIdentifierFirst) {
             var tblVC = destVC as CurrentTasksTableVC
